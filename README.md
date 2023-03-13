@@ -1,4 +1,4 @@
-# side_win_commander
+# Side win commander (Python, Qt)
 This is a program to send text commands to a specific window (another program) in Windows OS simulating keyboard presses.
 For example, this program can be used to send commands to any device connected to the computer which uses some special or standard program with GUI.
 
