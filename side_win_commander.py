@@ -461,7 +461,7 @@ class MainWindow(QMainWindow):
         windows = []
         win32gui.EnumWindows(self.windowEnumHandler, windows)
         for i in windows:
-            if template in i[1].lower():
+            if template.lower() in i[1].lower():
                 print('find_top_window(): top window found, template: ', template)
                 print('Handle: ', i[0])
                 print('Title: ', i[1])
@@ -473,6 +473,8 @@ class MainWindow(QMainWindow):
         if not self.hndl:
             print('find_top_window(): top window not found, template: ', template)
             print('\r\n')
+            self.find_win_panel.info.setStyleSheet('color: red;')
+            self.find_win_panel.info.setText('Target not found')
 
     def get_top_window(self):
         tmpl = self.find_win_panel.tmpl_field.text()
